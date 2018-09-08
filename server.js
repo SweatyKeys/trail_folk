@@ -6,11 +6,15 @@ const mongoose = require('mongoose')
 // models
 const user = require('./models/userModel')
 
+// routers
+const userRouter = require('./UserRouter')
+
 // server
 const app = express()
 
-// static files
+// outside files
 app.use(express.static('public'))
+app.use('/user', UserRouter.js)
 
 mongoose.connect('mongodb://localhost:27017/trail_folk-app')
 
